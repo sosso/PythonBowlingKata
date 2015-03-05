@@ -11,4 +11,9 @@ class BowlingGame(object):
         self.rolls.append(pins_toppled)
 
     def score(self):
-        return sum(self.rolls)
+        roll = 0
+        score = 0
+        for frame in range(0, 10):
+            score += self.rolls[roll] + self.rolls[roll + 1]
+            roll += 2
+        return score
