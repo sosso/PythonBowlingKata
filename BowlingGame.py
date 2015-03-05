@@ -14,6 +14,11 @@ class BowlingGame(object):
         roll = 0
         score = 0
         for frame in range(0, 10):
-            score += self.rolls[roll] + self.rolls[roll + 1]
+            frame_score = self.rolls[roll] + self.rolls[roll + 1]
+            if frame_score == 10: #spare
+                score += 10
+                score += self.rolls[roll + 2]
+            else:
+                score += self.rolls[roll] + self.rolls[roll + 1]
             roll += 2
         return score
