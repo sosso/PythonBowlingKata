@@ -30,23 +30,23 @@ class TestBowlingGame(unittest.TestCase):
         self.rollTimes(0, 17)
         self.assertEquals(26, self.game.score())
 
-    # def testPerfectGameIs300(self):
-    #     self.rollTimes(10, 12)
-    #     self.assertEquals(300, self.game.score())
+    def testPerfectGameIs300(self):
+        self.rollTimes(10, 12)
+        self.assertEquals(300, self.game.score())
 
-    # def testDutch200Is200(self):
-    #     for frame in range(10):
-    #         self.rollStrike()
-    #         self.rollSpare()
-    #     self.assertEquals(200, self.game.score())
+    def testDutch200Is200(self):
+        for frame in range(10):
+            self.rollStrike()
+            self.rollSpare()
+        self.assertEquals(200, self.game.score())
 
-    # def testGutterUntilLastFrameTurkeyIs30(self):
-    #     self.rollTimes(0, 18)
-    #     self.rollStrike()
-    #     self.rollStrike()
-    #     self.rollStrike()
-    #
-    #     self.assertEquals(30, self.game.score())
+    def testGutterUntilLastFrameTurkeyIs30(self):
+        self.rollTimes(0, 18)
+        self.rollStrike()
+        self.rollStrike()
+        self.rollStrike()
+
+        self.assertEquals(30, self.game.score())
 
     def rollSpare(self):
         self.game.roll(1)
