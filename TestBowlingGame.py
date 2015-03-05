@@ -17,5 +17,14 @@ class TestBowlingGame(unittest.TestCase):
             self.game.roll(1)
         self.assertEquals(20, self.game.score())
 
+    def testItHandlesSpares(self):
+        self.game.roll(1)
+        self.game.roll(9)
+        self.game.roll(5)
+
+        for _ in range(17):
+            self.game.roll(0)
+        self.assertEquals(20, self.game.score())
+
 if __name__ == '__main__':
     unittest.main()
